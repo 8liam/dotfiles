@@ -1,0 +1,6 @@
+# Map relative repo paths to destination paths.
+# Format:
+#   source/relative/path -> /absolute/destination/path
+# Use ~ for home expansion.
+
+ghostty/config -> ~/.config/ghostty/config
