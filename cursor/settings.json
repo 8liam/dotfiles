@@ -1,0 +1,5 @@
+{
+    "window.commandCenter": true,
+    "workbench.sideBar.location": "right"
+    // Configure theme yourself :)
+}
