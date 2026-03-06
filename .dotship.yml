@@ -1,0 +1,3 @@
+files:
+  ghostty/config: ~/.config/ghostty/config
+  cursor/settings.json: ~/Library/Application Support/Cursor/User/settings.json
