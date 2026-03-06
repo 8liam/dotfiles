@@ -1,5 +1,6 @@
 {
     "window.commandCenter": true,
-    "workbench.sideBar.location": "right"
+    "workbench.sideBar.location": "right",
+    "workbench.colorTheme": "Catppuccin Mocha"
     // Configure theme yourself :)
 }
