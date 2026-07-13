@@ -1,13 +1,28 @@
 # My Dotfiles
 
-Personal configuration files for macOS, managed with [dotship](https://github.com/8liam/dotship).
+Personal configuration files for macOS and Linux, managed with [dotship](https://github.com/8liam/dotship).
 
 ## What's included
 
-| File                   | Description                    | Destination                                               |
-| ---------------------- | ------------------------------ | --------------------------------------------------------- |
-| `ghostty/config`       | Ghostty terminal configuration | `~/.config/ghostty/config`                                |
-| `cursor/settings.json` | Cursor IDE settings            | `~/Library/Application Support/Cursor/User/settings.json` |
+### macOS
+
+| File                          | Description                    | Destination                                               |
+| ------------------------------ | ------------------------------ | --------------------------------------------------------- |
+| `macos/ghostty/config`         | Ghostty terminal configuration | `~/.config/ghostty/config`                                |
+| `macos/cursor/settings.json`   | Cursor IDE settings            | `~/Library/Application Support/Cursor/User/settings.json` |
+
+### Linux (CachyOS + Hyprland)
+
+| File                                | Description                          | Destination                        |
+| ------------------------------------ | ------------------------------------- | ----------------------------------- |
+| `linux/hypr/hyprland.lua`            | Hyprland config (Hyprlua)             | `~/.config/hypr/hyprland.lua`       |
+| `linux/hypr/hyprlock.conf`           | Lock screen                          | `~/.config/hypr/hyprlock.conf`      |
+| `linux/hypr/hypridle.conf`           | Idle/lock/suspend timers             | `~/.config/hypr/hypridle.conf`      |
+| `linux/hypr/hyprpaper.conf`          | Wallpaper                            | `~/.config/hypr/hyprpaper.conf`     |
+| `linux/waybar/*`                     | Status bar config + styling          | `~/.config/waybar/*`                |
+| `linux/fuzzel/fuzzel.ini`            | App launcher                         | `~/.config/fuzzel/fuzzel.ini`       |
+| `linux/mako/config`                  | Notification daemon                  | `~/.config/mako/config`             |
+| `linux/wlogout/*`                    | Logout menu                          | `~/.config/wlogout/*`               |
 
 ## Quick install
 
@@ -23,12 +38,12 @@ dotship will detect the `.dotship.yml` manifest and offer to install all config 
 ## Configuration
 
 If you are forking this repo for use with your own dotfiles,
-Add the `.dotship.yml` file for the repo root:
+add a `.dotship.yml` file to the repo root. Example:
 
 ```yml
 files:
-  ghostty/config: ~/.config/ghostty/config
-  cursor/settings.json: ~/Library/Application Support/Cursor/User/settings.json
+  macos/ghostty/config: ~/.config/ghostty/config
+  linux/hypr/hyprland.lua: ~/.config/hypr/hyprland.lua
 ```
 
 ## About dotship

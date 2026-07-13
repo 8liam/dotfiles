@@ -1,0 +1,149 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: Adwaita, FontAwesome, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar {
+    background-color: rgba(30, 30, 30, 0.6);
+    color: #d8d4cf;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+    /* Avoid rounded borders under each button name */
+    border: none;
+    border-radius: 0;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+    background: inherit;
+    box-shadow: inset 0 -3px #d97757;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background-color: transparent;
+    color: #d8d4cf;
+}
+
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#workspaces button.focused, #workspaces button.active {
+    background-color: rgba(217, 119, 87, 0.22);
+    box-shadow: inset 0 -3px #d97757;
+}
+
+#workspaces button.urgent {
+    background-color: #3a1e1b;
+}
+
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#mpd,
+#mpris,
+#tray,
+#custom-launcher,
+#custom-filemanager,
+#custom-terminal,
+#custom-power {
+    padding: 0 10px;
+    color: #d8d4cf;
+}
+
+#custom-launcher:hover,
+#custom-filemanager:hover,
+#custom-terminal:hover {
+    color: #efe9e3;
+}
+
+#mpris,
+#pulseaudio {
+    background-color: #2d2d2d;
+}
+
+#mpris:hover,
+#pulseaudio:hover {
+    background-color: #3a2620;
+}
+
+#pulseaudio.muted {
+    background-color: #3a1e1b;
+}
+
+#clock {
+    padding: 0 10px;
+    background-color: #d97757;
+    color: #1e1e1e;
+}
+
+#clock:hover {
+    background-color: #c1663f;
+}
+
+#custom-power {
+    padding: 0 10px;
+    background-color: #3a1e1b
+}
+
+#custom-power:hover {
+    background-color: #55231f;
+}
+
+#battery.charging, #battery.plugged {
+    color: #d97757;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+    color: #e0524a;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #e0524a;
+}

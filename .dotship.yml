@@ -1,3 +1,17 @@
 files:
-  ghostty/config: ~/.config/ghostty/config
-  cursor/settings.json: ~/Library/Application Support/Cursor/User/settings.json
+  macos/ghostty/config: ~/.config/ghostty/config
+  macos/cursor/settings.json: ~/Library/Application Support/Cursor/User/settings.json
+  linux/hypr/hyprland.lua: ~/.config/hypr/hyprland.lua
+  linux/hypr/hyprlock.conf: ~/.config/hypr/hyprlock.conf
+  linux/hypr/hypridle.conf: ~/.config/hypr/hypridle.conf
+  linux/hypr/hyprpaper.conf: ~/.config/hypr/hyprpaper.conf
+  linux/waybar/config.jsonc: ~/.config/waybar/config.jsonc
+  linux/waybar/modules.json: ~/.config/waybar/modules.json
+  linux/waybar/style.css: ~/.config/waybar/style.css
+  linux/waybar/style-default.css: ~/.config/waybar/style-default.css
+  linux/waybar/config-default.jsonc: ~/.config/waybar/config-default.jsonc
+  linux/waybar/waybar.sh: ~/.config/waybar/waybar.sh
+  linux/fuzzel/fuzzel.ini: ~/.config/fuzzel/fuzzel.ini
+  linux/mako/config: ~/.config/mako/config
+  linux/wlogout/layout: ~/.config/wlogout/layout
+  linux/wlogout/style.css: ~/.config/wlogout/style.css
