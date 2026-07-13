@@ -15,3 +15,4 @@ files:
   linux/mako/config: ~/.config/mako/config
   linux/wlogout/layout: ~/.config/wlogout/layout
   linux/wlogout/style.css: ~/.config/wlogout/style.css
+  linux/fastfetch/config.jsonc: ~/.config/fastfetch/config.jsonc

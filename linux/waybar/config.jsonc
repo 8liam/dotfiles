@@ -9,15 +9,15 @@
     "modules-left": [
         "custom/launcher",
         "custom/filemanager",
-        "custom/terminal",
-        "hyprland/workspaces"
+        "custom/terminal"
     ],
     "modules-center": [
-        "hyprland/window"
+        "hyprland/workspaces"
     ],
     "modules-right": [
         "mpris",
         "pulseaudio",
+        "group/perf",
         "tray",
         "battery",
         "clock",

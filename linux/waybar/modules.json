@@ -19,9 +19,9 @@
     
     "hyprland/workspaces": {
         "all-outputs": true,
-        "format": "{name}",
-        "on-scroll-up": "hyprctl dispatch workspace e+1 1>/dev/null",
-        "on-scroll-down": "hyprctl dispatch workspace e-1 1>/dev/null"
+        "format": "",
+        "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e+1\" })' 1>/dev/null",
+        "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e-1\" })' 1>/dev/null"
     },
 
     "hyprland/window": {
@@ -29,6 +29,62 @@
         "separate-outputs": true,
         "tooltip": false,
         "icon": true
+    },
+
+    "custom/perf-icon": {
+        "format": "",
+        "tooltip-format": "Performance"
+    },
+
+    "group/perf": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 400,
+            "children-class": "perf-child",
+            "transition-left-to-right": true
+        },
+        "modules": [
+            "custom/perf-icon",
+            "cpu",
+            "temperature",
+            "custom/gpu",
+            "custom/gputemp",
+            "memory"
+        ]
+    },
+
+    "cpu": {
+        "format": "CPU {usage}%",
+        "interval": 2,
+        "tooltip": false
+    },
+
+    "temperature": {
+        "hwmon-path": "/sys/class/hwmon/hwmon6/temp1_input",
+        "format": "CPU {temperatureC}°C",
+        "critical-threshold": 90,
+        "interval": 2,
+        "tooltip": false
+    },
+
+    "memory": {
+        "format": "RAM {percentage}%",
+        "interval": 5,
+        "tooltip-format": "{used:0.1f}GiB / {total:0.1f}GiB used"
+    },
+
+    "custom/gpu": {
+        "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits",
+        "format": "GPU {}%",
+        "interval": 2,
+        "tooltip": false
+    },
+
+    "custom/gputemp": {
+        "exec": "nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits",
+        "format": "GPU {}°C",
+        "interval": 2,
+        "tooltip": false
     },
 
     "mpris": {

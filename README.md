@@ -23,6 +23,7 @@ Personal configuration files for macOS and Linux, managed with [dotship](https:/
 | `linux/fuzzel/fuzzel.ini`            | App launcher                         | `~/.config/fuzzel/fuzzel.ini`       |
 | `linux/mako/config`                  | Notification daemon                  | `~/.config/mako/config`             |
 | `linux/wlogout/*`                    | Logout menu                          | `~/.config/wlogout/*`               |
+| `linux/fastfetch/config.jsonc`       | System info fetch theming            | `~/.config/fastfetch/config.jsonc`  |
 
 ## Quick install
 
