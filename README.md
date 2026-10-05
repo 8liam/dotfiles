@@ -24,7 +24,7 @@ sh ~/glance/glance.sh                  # starts the container service, pulls and
 launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.liam.glance.plist   # start at login
 ```
 
-Glance only reads `glance.yml` on startup, so after editing it run `sh ~/glance/glance.sh restart`. Apple's runtime has no restart policy, which is why the LaunchAgent exists.
+Glance is published on `127.0.0.1` only, so put a reverse proxy (e.g. Caddy) in front of it for tailnet access; set `GLANCE_BIND=0.0.0.0` to expose the port directly. Glance only reads `glance.yml` on startup, so after editing it run `sh ~/glance/glance.sh restart`. Changing the port or bind address needs `sh ~/glance/glance.sh recreate`. Apple's runtime has no restart policy, which is why the LaunchAgent exists.
 
 ### Linux (CachyOS + Hyprland)
 
