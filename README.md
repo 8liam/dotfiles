@@ -10,6 +10,21 @@ Personal configuration files for macOS and Linux, managed with [dotship](https:/
 | ------------------------------ | ------------------------------ | --------------------------------------------------------- |
 | `macos/ghostty/config`         | Ghostty terminal configuration | `~/.config/ghostty/config`                                |
 | `macos/cursor/settings.json`   | Cursor IDE settings            | `~/Library/Application Support/Cursor/User/settings.json` |
+| `macos/glance/glance.yml`      | Glance dashboard config        | `~/glance/config/glance.yml`                              |
+| `macos/glance/glance.sh`       | Run/restart Glance in a container | `~/glance/glance.sh`                                   |
+| `macos/glance/com.liam.glance.plist` | Start Glance at login (LaunchAgent) | `~/Library/LaunchAgents/com.liam.glance.plist`   |
+
+#### Glance on macOS (Apple container)
+
+Glance runs in an [Apple container](https://github.com/apple/container) (Apple silicon, macOS 26+). After installing the files with dotship:
+
+```sh
+brew install container
+sh ~/glance/glance.sh                  # starts the container service, pulls and runs Glance on :8080
+launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.liam.glance.plist   # start at login
+```
+
+Glance only reads `glance.yml` on startup, so after editing it run `sh ~/glance/glance.sh restart`. Apple's runtime has no restart policy, which is why the LaunchAgent exists.
 
 ### Linux (CachyOS + Hyprland)
 
